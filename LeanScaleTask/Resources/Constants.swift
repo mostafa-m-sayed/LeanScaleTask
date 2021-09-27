@@ -9,8 +9,8 @@ import Foundation
 class Constants {
     static var shared = Constants()
 
-    private var baseURL = "https://api.rawg.io/api/"
-    let apiKey = "3be8af6ebf124ffe81d90f514e59856c"
+    private let baseURL = Bundle.main.infoDictionary?["BASE_URL"] ?? ""
+    let apiKey = Bundle.main.infoDictionary?["API_KEY"] ?? ""
 
     enum APIUrls: String {
         case games = "games"

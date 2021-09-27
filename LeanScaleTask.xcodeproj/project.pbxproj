@@ -731,8 +731,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BDEA12135ECE39F36B317489 /* Pods-LeanScaleTask.debug.xcconfig */;
 			buildSettings = {
+				API_KEY = 3be8af6ebf124ffe81d90f514e59856c;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://api.rawg.io/api/";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C5657XP2G;
 				INFOPLIST_FILE = LeanScaleTask/Info.plist;
@@ -751,8 +753,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2BC969F515CCC91E4BBC7760 /* Pods-LeanScaleTask.release.xcconfig */;
 			buildSettings = {
+				API_KEY = 3be8af6ebf124ffe81d90f514e59856c;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				BASE_URL = "https://api.rawg.io/api/";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5C5657XP2G;
 				INFOPLIST_FILE = LeanScaleTask/Info.plist;
