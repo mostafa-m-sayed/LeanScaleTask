@@ -50,12 +50,27 @@ struct GameVM {
     
     static func get(gameId: Int, completion: @escaping (_ game: GameVM?, _ error: String?) -> Void) {
         guard let url = URL(string:  "\(Constants.APIUrls.games.getURL())/\(gameId)?key=\(Constants.shared.apiKey)") else { return }
+
+        if let cachedData = CachingController(type: .gameDetails).get(url: "\(gameId)") {
+            if let game: Game = cachedData.getObject() {
+                let game = GameVM(game: game)
+                completion(game, nil)
+            }
+        }
         
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
             guard let data = data, let game: Game = data.getObject()  else {
                 return
             }
             completion(GameVM(game: game), nil)
+
+            do {
+                let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String: Any]
+                CachingController(type: .gameDetails).save(response: dictionary as NSDictionary, url: "\(gameId)")
+            } catch let error as NSError {
+                print("Unable to cache game details: \(error.localizedDescription)" )
+            }
+            
         }
         task.resume()
     }
