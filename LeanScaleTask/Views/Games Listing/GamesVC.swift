@@ -32,7 +32,7 @@ class GamesVC: UIViewController {
     }
     
     func initializePullToRefresh() {
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        // refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh") // Show text above indicator
         refreshControl.addTarget(self, action: #selector(self.refreshList(_:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
     }
