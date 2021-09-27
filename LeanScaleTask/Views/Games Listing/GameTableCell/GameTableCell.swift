@@ -35,8 +35,7 @@ class GameTableCell: UITableViewCell {
         titleLabel.text = game.name
         genreLabel.text = game.genres
         img.kf.setImage(with: URL(string: game.image), placeholder: UIImage(named: "game-placeholder"))
-        metacriticLabel.text = game.metacritic ?? ""
-        metacriticStack.isHidden = game.metacritic == nil
+        metacriticLabel.text = game.metacritic
         self.backgroundColor = game.viewed ? UIColor(named: "selected-cell") : UIColor.white
     }
     

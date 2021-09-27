@@ -39,11 +39,12 @@ struct GameVM {
         return URL(string: game.website ?? "")
     }
 
-    var metacritic: String? {
+    var metacritic: String {
         if let meta = game.metacritic {
             return "\(meta)"
+        } else {
+            return "-"
         }
-        return nil
     }
 
     var viewed: Bool = false
