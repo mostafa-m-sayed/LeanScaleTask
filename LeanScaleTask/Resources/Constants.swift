@@ -7,8 +7,11 @@
 
 import Foundation
 class Constants {
-    var baseURL = "https://api.rawg.io/api/"
-    
+    static var shared = Constants()
+
+    private var baseURL = "https://api.rawg.io/api/"
+    let apiKey = "3be8af6ebf124ffe81d90f514e59856c"
+
     enum APIUrls: String {
         case games = "games"
         func getURL() -> String {

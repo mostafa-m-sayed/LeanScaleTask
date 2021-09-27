@@ -8,22 +8,41 @@
 import UIKit
 
 class GameDetailsVC: UIViewController {
-
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var descLabel: UILabel! {
+        didSet {
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(descLabelTapped))
+            descLabel.addGestureRecognizer(gesture)
+        }
+    }
+    var gameId: Int?
+    var game: GameVM?
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+
+    @IBAction func favouriteButtonTapped(_ sender: UIButton) {
+        game?.addToFavourite()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getGame() {
+        guard let id = gameId else { return }
+        GameVM.get(gameId: id) { game, error in
+            self.game = game
+            
+        }
     }
-    */
-
+    
+    @objc func descLabelTapped() {
+        descLabel.numberOfLines = 0
+        descLabel.sizeToFit()
+        descLabel.layoutIfNeeded()
+    }
+    func bindData() {
+        guard let game = game else { return }
+        titleLabel.text = game.name
+        descLabel.attributedText = game.description
+    }
 }
