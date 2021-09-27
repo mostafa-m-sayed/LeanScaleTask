@@ -9,27 +9,28 @@ import UIKit
 import Kingfisher
 
 class GameDetailsVC: UIViewController {
-    @IBOutlet weak var reditView: UIView! {
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var redditView: UIView! {
         didSet {
-            let gesture = UITapGestureRecognizer(target: self, action: #selector(descLabelTapped))
-            reditView.addGestureRecognizer(gesture)
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(goToURL))
+            redditView.addGestureRecognizer(gesture)
         }
     }
-    @IBOutlet weak var websiteView: UIView!
+    @IBOutlet weak var websiteView: UIView! {
+        didSet {
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(goToURL))
+            websiteView.addGestureRecognizer(gesture)
+        }
+    }
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var descLabel: UILabel! {
-        didSet {
-            let gesture = UITapGestureRecognizer(target: self, action: #selector(descLabelTapped))
-            descLabel.addGestureRecognizer(gesture)
-        }
-    }
+    
     var gameId: Int?
     var game: GameVM?
     override func viewDidLoad() {
         super.viewDidLoad()
         getGame()
-        
+        tableView.register(UINib(nibName: "GameDetailsTableCell", bundle: nil), forCellReuseIdentifier: "GameDetailsTableCell")
     }
     
     @IBAction func favouriteButtonTapped(_ sender: UIButton) {
@@ -44,17 +45,10 @@ class GameDetailsVC: UIViewController {
         }
     }
     
-    @objc func descLabelTapped() {
-        descLabel.numberOfLines = 0
-        descLabel.sizeToFit()
-        descLabel.layoutIfNeeded()
-    }
-    
     func bindData() {
         guard let game = game else { return }
         DispatchQueue.main.async {
             self.titleLabel.text = game.name
-            self.descLabel.attributedText = game.description
             self.img.kf.setImage(with: URL(string: game.image), placeholder: UIImage(named: "game-placeholder"))
         }
     }
@@ -77,5 +71,24 @@ class GameDetailsVC: UIViewController {
     enum UrlTypes: Int {
         case reddit = 0
         case website = 1
+    }
+}
+extension GameDetailsVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GameDetailsTableCell", for: indexPath) as! GameDetailsTableCell
+        cell.delegate = self
+        cell.descLabel.attributedText = game?.description
+        return cell
+    }
+    
+    
+}
+extension GameDetailsVC: DescriptionStatus {
+    func DescriptionExpanded() {
+        tableView.reloadData()
     }
 }

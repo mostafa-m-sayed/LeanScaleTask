@@ -30,6 +30,8 @@
 		06A7A4492701FB37007F1163 /* GameDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7A4482701FB37007F1163 /* GameDetailsVC.swift */; };
 		06A7A44B270204AC007F1163 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7A44A270204AC007F1163 /* StringExt.swift */; };
 		06A7A44D2702279A007F1163 /* CachingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7A44C2702279A007F1163 /* CachingController.swift */; };
+		06A7A45027023B1E007F1163 /* GameDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7A44E27023B1E007F1163 /* GameDetailsTableCell.swift */; };
+		06A7A45127023B1E007F1163 /* GameDetailsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A7A44F27023B1E007F1163 /* GameDetailsTableCell.xib */; };
 		1BC66F61A92D9F5F266963CA /* Pods_LeanScaleTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E72971F8CDB57E460740FC /* Pods_LeanScaleTask.framework */; };
 		739B1113E7762EDF61077C8D /* Pods_LeanScaleTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 977C35008F547C4E9E5E05F8 /* Pods_LeanScaleTaskTests.framework */; };
 		BF65D76255858563EF6FDE58 /* Pods_LeanScaleTask_LeanScaleTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D671ED9308D75FFBDE34E5 /* Pods_LeanScaleTask_LeanScaleTaskUITests.framework */; };
@@ -82,6 +84,8 @@
 		06A7A4482701FB37007F1163 /* GameDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsVC.swift; sourceTree = "<group>"; };
 		06A7A44A270204AC007F1163 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		06A7A44C2702279A007F1163 /* CachingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingController.swift; sourceTree = "<group>"; };
+		06A7A44E27023B1E007F1163 /* GameDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsTableCell.swift; sourceTree = "<group>"; };
+		06A7A44F27023B1E007F1163 /* GameDetailsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameDetailsTableCell.xib; sourceTree = "<group>"; };
 		2BC969F515CCC91E4BBC7760 /* Pods-LeanScaleTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeanScaleTask.release.xcconfig"; path = "Target Support Files/Pods-LeanScaleTask/Pods-LeanScaleTask.release.xcconfig"; sourceTree = "<group>"; };
 		67FA58B1AEA3D835E33754BB /* Pods-LeanScaleTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeanScaleTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-LeanScaleTaskTests/Pods-LeanScaleTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		977C35008F547C4E9E5E05F8 /* Pods_LeanScaleTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeanScaleTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -258,8 +262,18 @@
 			isa = PBXGroup;
 			children = (
 				06A7A4482701FB37007F1163 /* GameDetailsVC.swift */,
+				06A7A45227023B2B007F1163 /* GameDetailsTableCell */,
 			);
 			path = "Game Details";
+			sourceTree = "<group>";
+		};
+		06A7A45227023B2B007F1163 /* GameDetailsTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				06A7A44E27023B1E007F1163 /* GameDetailsTableCell.swift */,
+				06A7A44F27023B1E007F1163 /* GameDetailsTableCell.xib */,
+			);
+			path = GameDetailsTableCell;
 			sourceTree = "<group>";
 		};
 		63FA173C81ECF6F6888396B5 /* Frameworks */ = {
@@ -394,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A7A43627008560007F1163 /* Colors.xcassets in Resources */,
+				06A7A45127023B1E007F1163 /* GameDetailsTableCell.xib in Resources */,
 				06A7A43427007F90007F1163 /* GameTableCell.xib in Resources */,
 				06A7A402270070F5007F1163 /* LaunchScreen.storyboard in Resources */,
 				06A7A3FF270070F5007F1163 /* Assets.xcassets in Resources */,
@@ -525,6 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06A7A45027023B1E007F1163 /* GameDetailsTableCell.swift in Sources */,
 				06A7A3F6270070F4007F1163 /* AppDelegate.swift in Sources */,
 				06A7A42C27007D84007F1163 /* GamesVC.swift in Sources */,
 				06A7A43A2700A9A3007F1163 /* Game.swift in Sources */,

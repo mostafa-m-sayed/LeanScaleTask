@@ -11,7 +11,7 @@ class GamesVC: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     let refreshControl = UIRefreshControl()
 
-    let search = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController(searchResultsController: nil)
     var gamesVM = GameListVM()
 
     override func viewDidLoad() {
@@ -24,9 +24,11 @@ class GamesVC: UIViewController {
     }
 
     func initializeSearch() {
-        search.searchBar.placeholder = "Search for the games"
-        search.searchResultsUpdater = self
-        self.navigationItem.searchController = search
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Search for the games"
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        self.navigationItem.searchController = searchController
     }
     
     func initializePullToRefresh() {
@@ -52,14 +54,19 @@ class GamesVC: UIViewController {
     }
 }
 
-extension GamesVC: UISearchResultsUpdating {
+extension GamesVC: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         guard let term = searchController.searchBar.text else { return }
-        if term.count > 3 {
+        if term.count > 3 || term == "" {
             gamesVM.searchTerm = term
             getGames()
         }
     }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        gamesVM.searchTerm = ""
+        getGames()
+    }
+    
 }
 
 extension GamesVC: UITableViewDelegate, UITableViewDataSource {
@@ -80,7 +87,6 @@ extension GamesVC: UITableViewDelegate, UITableViewDataSource {
             nextVC.gameId = gamesVM.games[indexPath.row].id
             navigationController?.pushViewController(nextVC, animated: true)
         }
-        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
