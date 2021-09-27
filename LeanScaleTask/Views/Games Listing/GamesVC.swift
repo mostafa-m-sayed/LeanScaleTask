@@ -45,7 +45,9 @@ class GamesVC: UIViewController {
         if !isPagination {
             gamesVM.paginationURL = nil
         }
+        ActivityIndicatorController.shared.startLoading(vc: self)
         gamesVM.getGames {success in
+            ActivityIndicatorController.shared.stopLoading()
             DispatchQueue.main.async {
                 self.refreshControl.endRefreshing()
                 self.tableView.reloadData()

@@ -42,7 +42,9 @@ class GameDetailsVC: UIViewController {
     
     func getGame() {
         guard let id = gameId else { return }
+        ActivityIndicatorController.shared.startLoading(vc: self)
         GameVM.get(gameId: id) { game, error in
+            ActivityIndicatorController.shared.stopLoading()
             self.game = game
             self.bindData()
         }
@@ -80,6 +82,22 @@ class GameDetailsVC: UIViewController {
     enum UrlTypes: Int {
         case reddit = 0
         case website = 1
+    }
+
+}
+extension UIViewController {
+
+    func loader() -> UIAlertController {
+        let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        if #available(iOS 13.0, *) {
+            loadingIndicator.style = UIActivityIndicatorView.Style.large
+        }
+        loadingIndicator.startAnimating()
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
+        return alert
     }
 }
 extension GameDetailsVC: UITableViewDataSource {
