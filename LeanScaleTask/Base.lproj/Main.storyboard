@@ -263,6 +263,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="favouriteButton" destination="KHp-QR-ReB" id="2d5-kM-0Qq"/>
                         <outlet property="img" destination="mMH-1F-Fk9" id="coC-kr-J8k"/>
                         <outlet property="redditView" destination="XbB-NC-4Ns" id="Too-b9-s6i"/>
                         <outlet property="tableView" destination="7f0-3c-BEp" id="cWh-js-bfN"/>

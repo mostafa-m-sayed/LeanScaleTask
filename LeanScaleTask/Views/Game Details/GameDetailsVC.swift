@@ -9,6 +9,7 @@ import UIKit
 import Kingfisher
 
 class GameDetailsVC: UIViewController {
+    @IBOutlet weak var favouriteButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var redditView: UIView! {
         didSet {
@@ -27,6 +28,7 @@ class GameDetailsVC: UIViewController {
     
     var gameId: Int?
     var game: GameVM?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         getGame()
@@ -34,7 +36,8 @@ class GameDetailsVC: UIViewController {
     }
     
     @IBAction func favouriteButtonTapped(_ sender: UIButton) {
-        game?.addToFavourite()
+        game?.isFavourited() ?? false ? game?.removeFromFavourite() : game?.addToFavourite()
+        setFavouriteButtonTitle()
     }
     
     func getGame() {
@@ -50,6 +53,7 @@ class GameDetailsVC: UIViewController {
         DispatchQueue.main.async {
             self.titleLabel.text = game.name
             self.img.kf.setImage(with: URL(string: game.image), placeholder: UIImage(named: "game-placeholder"))
+            self.setFavouriteButtonTitle()
         }
     }
     
@@ -68,6 +72,11 @@ class GameDetailsVC: UIViewController {
                 return
         }
     }
+
+    func setFavouriteButtonTitle() {
+        favouriteButton.setTitle(game?.isFavourited() ?? false ? "Favourited" : "Favourite", for: .normal)
+    }
+    
     enum UrlTypes: Int {
         case reddit = 0
         case website = 1

@@ -102,4 +102,13 @@ struct GameVM {
             defaults.saveObject(rawData: games, forKey: "favourite-games")
         }
     }
+    
+    func isFavourited() -> Bool {
+        let defaults = UserDefaults.standard
+
+        if let games: [Game] = defaults.getObject(key: "favourite-games") {
+            return games.contains(where: {$0.id == self.game.id})
+        }
+        return false
+    }
 }
