@@ -104,17 +104,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gM3-sa-Z7v">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="291"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="291"/>
                                 <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="URq-Qr-BEU">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="291"/>
+                                    </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W81-31-vk2">
                                         <rect key="frame" x="16" y="232" width="382" height="43"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="URq-Qr-BEU">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="291"/>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
@@ -123,13 +123,13 @@
                                     <constraint firstAttribute="trailing" secondItem="URq-Qr-BEU" secondAttribute="trailing" id="7jh-bH-BEM"/>
                                     <constraint firstAttribute="bottom" secondItem="URq-Qr-BEU" secondAttribute="bottom" id="BnF-WM-BEv"/>
                                     <constraint firstAttribute="bottom" secondItem="W81-31-vk2" secondAttribute="bottom" constant="16" id="Qxq-Kw-KFb"/>
-                                    <constraint firstItem="URq-Qr-BEU" firstAttribute="top" secondItem="gM3-sa-Z7v" secondAttribute="top" id="TRW-Ji-ZyD"/>
+                                    <constraint firstItem="URq-Qr-BEU" firstAttribute="top" secondItem="gM3-sa-Z7v" secondAttribute="top" id="Ry5-Mc-Qt0"/>
                                     <constraint firstAttribute="trailing" secondItem="W81-31-vk2" secondAttribute="trailing" constant="16" id="Vtd-3b-RKz"/>
                                     <constraint firstItem="URq-Qr-BEU" firstAttribute="leading" secondItem="gM3-sa-Z7v" secondAttribute="leading" id="oYb-lj-Mbc"/>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vmh-4e-Shc">
-                                <rect key="frame" x="16" y="307" width="382" height="40.5"/>
+                                <rect key="frame" x="16" y="395" width="382" height="40.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="adZ-jj-0Fp">
                                         <rect key="frame" x="0.0" y="0.0" width="382" height="20.5"/>
@@ -137,7 +137,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHo-GH-NCM">
+                                    <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EHo-GH-NCM">
                                         <rect key="frame" x="0.0" y="28.5" width="382" height="12"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="textColor"/>
@@ -152,8 +152,8 @@
                             <constraint firstItem="Vmh-4e-Shc" firstAttribute="top" secondItem="gM3-sa-Z7v" secondAttribute="bottom" constant="16" id="DT5-GD-bwo"/>
                             <constraint firstAttribute="trailing" secondItem="gM3-sa-Z7v" secondAttribute="trailing" id="Lop-g4-Ke6"/>
                             <constraint firstItem="Vmh-4e-Shc" firstAttribute="leading" secondItem="1Dr-jD-F2w" secondAttribute="leading" constant="16" id="MfP-yc-aR8"/>
+                            <constraint firstItem="gM3-sa-Z7v" firstAttribute="top" secondItem="1Dr-jD-F2w" secondAttribute="top" id="gGf-Mn-cpY"/>
                             <constraint firstItem="gM3-sa-Z7v" firstAttribute="leading" secondItem="MAo-Dr-EUV" secondAttribute="leading" id="i0g-Hd-omi"/>
-                            <constraint firstItem="gM3-sa-Z7v" firstAttribute="top" secondItem="MAo-Dr-EUV" secondAttribute="top" id="u3U-1n-hUL"/>
                             <constraint firstItem="1Dr-jD-F2w" firstAttribute="trailing" secondItem="Vmh-4e-Shc" secondAttribute="trailing" constant="16" id="uEB-l8-o8s"/>
                         </constraints>
                     </view>
@@ -177,7 +177,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8B-7f-1BG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3021.739130434783" y="-113.16964285714285"/>
+            <point key="canvasLocation" x="3497.1014492753625" y="-113.16964285714285"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="IPz-kg-Keu">
@@ -234,6 +234,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAg-jv-gFt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-362" y="277"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ywd-v4-rcf">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kt1-wF-WH5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fv8-fH-YRK">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Zju-uw-JHI" kind="relationship" relationship="rootViewController" id="mxk-X3-ptr"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ao2-BU-jWj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2586.9565217391305" y="-113.16964285714285"/>
         </scene>
     </scenes>
     <resources>

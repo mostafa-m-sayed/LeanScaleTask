@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class GameDetailsVC: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
@@ -20,6 +21,7 @@ class GameDetailsVC: UIViewController {
     var game: GameVM?
     override func viewDidLoad() {
         super.viewDidLoad()
+        getGame()
 
     }
 
@@ -31,7 +33,7 @@ class GameDetailsVC: UIViewController {
         guard let id = gameId else { return }
         GameVM.get(gameId: id) { game, error in
             self.game = game
-            
+            self.bindData()
         }
     }
     
@@ -40,9 +42,13 @@ class GameDetailsVC: UIViewController {
         descLabel.sizeToFit()
         descLabel.layoutIfNeeded()
     }
+
     func bindData() {
         guard let game = game else { return }
-        titleLabel.text = game.name
-        descLabel.attributedText = game.description
+        DispatchQueue.main.async {
+            self.titleLabel.text = game.name
+            self.descLabel.attributedText = game.description
+            self.img.kf.setImage(with: URL(string: game.image), placeholder: UIImage(named: "game-placeholder"))
+        }
     }
 }

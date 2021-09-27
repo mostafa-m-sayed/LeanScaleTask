@@ -78,6 +78,11 @@ extension GamesVC: UITableViewDelegate, UITableViewDataSource {
         gamesVM.games[indexPath.row].viewed = true
         let cell = tableView.cellForRow(at: indexPath)
         cell?.backgroundColor = UIColor(named: "selected-cell")
+        if let nextVC = storyboard?.instantiateViewController(withIdentifier: "GameDetailsVC") as? GameDetailsVC {
+            nextVC.gameId = gamesVM.games[indexPath.row].id
+            navigationController?.pushViewController(nextVC, animated: true)
+        }
+        
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {

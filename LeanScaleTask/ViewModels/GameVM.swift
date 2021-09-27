@@ -8,6 +8,9 @@
 import Foundation
 struct GameVM {
     var game: Game
+    var id: Int {
+        return game.id ?? 0
+    }
     var name: String {
         return game.name ?? ""
     }
@@ -38,7 +41,7 @@ struct GameVM {
     var viewed: Bool = false
     
     static func get(gameId: Int, completion: @escaping (_ game: GameVM?, _ error: String?) -> Void) {
-        guard let url = URL(string:  "\(Constants.APIUrls.games.getURL())/\(gameId)/?key=\(Constants.shared.apiKey)") else { return }
+        guard let url = URL(string:  "\(Constants.APIUrls.games.getURL())/\(gameId)?key=\(Constants.shared.apiKey)") else { return }
         
         let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
             guard let data = data, let game: Game = data.getObject()  else {
