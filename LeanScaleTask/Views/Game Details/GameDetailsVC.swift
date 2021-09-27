@@ -9,6 +9,13 @@ import UIKit
 import Kingfisher
 
 class GameDetailsVC: UIViewController {
+    @IBOutlet weak var reditView: UIView! {
+        didSet {
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(descLabelTapped))
+            reditView.addGestureRecognizer(gesture)
+        }
+    }
+    @IBOutlet weak var websiteView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var img: UIImageView!
     @IBOutlet weak var descLabel: UILabel! {
@@ -22,9 +29,9 @@ class GameDetailsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getGame()
-
+        
     }
-
+    
     @IBAction func favouriteButtonTapped(_ sender: UIButton) {
         game?.addToFavourite()
     }
@@ -42,7 +49,7 @@ class GameDetailsVC: UIViewController {
         descLabel.sizeToFit()
         descLabel.layoutIfNeeded()
     }
-
+    
     func bindData() {
         guard let game = game else { return }
         DispatchQueue.main.async {
@@ -50,5 +57,25 @@ class GameDetailsVC: UIViewController {
             self.descLabel.attributedText = game.description
             self.img.kf.setImage(with: URL(string: game.image), placeholder: UIImage(named: "game-placeholder"))
         }
+    }
+    
+    @objc func goToURL(_ gesture: UITapGestureRecognizer) {
+        let urlType = UrlTypes(rawValue: gesture.view?.tag ?? 0)
+        switch urlType {
+            case .reddit:
+                if let url = game?.redditURL {
+                    UIApplication.shared.open(url)
+                }
+            case .website:
+                if let url = game?.website {
+                    UIApplication.shared.open(url)
+                }
+            case .none:
+                return
+        }
+    }
+    enum UrlTypes: Int {
+        case reddit = 0
+        case website = 1
     }
 }

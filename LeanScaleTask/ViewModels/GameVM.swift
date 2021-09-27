@@ -30,6 +30,14 @@ struct GameVM {
         guard let gens = game.genres, gens.count > 0 else { return ""}
         return gens.compactMap {$0.name}.joined(separator: ", ")
     }
+    
+    var redditURL: URL? {
+        return URL(string: game.redditUrl ?? "")
+    }
+    
+    var website: URL? {
+        return URL(string: game.website ?? "")
+    }
 
     var metacritic: String? {
         if let meta = game.metacritic {

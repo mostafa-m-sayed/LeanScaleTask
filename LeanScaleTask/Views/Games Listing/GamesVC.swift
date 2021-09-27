@@ -47,8 +47,6 @@ class GamesVC: UIViewController {
             DispatchQueue.main.async {
                 self.refreshControl.endRefreshing()
                 self.tableView.reloadData()
-                self.gamesVM.games[0].addToFavourite()
-                self.gamesVM.games[3].addToFavourite()
             }
         }
     }

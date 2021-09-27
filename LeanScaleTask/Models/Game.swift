@@ -14,4 +14,6 @@ struct Game: Codable {
     var metacritic: Int?
     var genres: [GameGenre]?
     var description: String?
+    var redditUrl: String?
+    var website: String?
 }

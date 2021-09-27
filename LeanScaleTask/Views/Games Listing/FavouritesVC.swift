@@ -17,12 +17,21 @@ class FavouritesVC: UIViewController {
         super.viewDidLoad()
 
         tableView.register(UINib(nibName: "GameTableCell", bundle: nil), forCellReuseIdentifier: "GameTableCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         getGames()
     }
     
     func getGames() {
         gamesVM.getFavouriteGames()
         tableView.reloadData()
+    }
+    
+    func removeFromFavourite(game: GameVM) {
+        game.removeFromFavourite()
+        getGames()
     }
 
 }
@@ -49,8 +58,14 @@ extension FavouritesVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            gamesVM.games[indexPath.row].removeFromFavourite()
-            getGames()
+            let alert = UIAlertController(title: "Delete", message: "Delete from favourites ?", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .destructive, handler: { action in
+                self.removeFromFavourite(game: self.gamesVM.games[indexPath.row])
+            }))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { action in
+                return
+            }))
+            present(alert, animated: true)
         }
     }
 }
