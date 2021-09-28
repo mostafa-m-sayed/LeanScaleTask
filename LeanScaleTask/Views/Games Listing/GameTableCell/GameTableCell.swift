@@ -34,6 +34,7 @@ class GameTableCell: UITableViewCell {
     func bindData(game: GameVM) {
         titleLabel.text = game.name
         genreLabel.text = game.genres
+        self.img.kf.indicatorType = .activity
         img.kf.setImage(with: URL(string: game.image), placeholder: UIImage(named: "game-placeholder"))
         metacriticLabel.text = game.metacritic
         self.backgroundColor = game.viewed ? UIColor(named: "selected-cell") : UIColor.white

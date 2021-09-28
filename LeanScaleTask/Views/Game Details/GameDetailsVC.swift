@@ -57,6 +57,7 @@ class GameDetailsVC: UIViewController {
         guard let game = game else { return }
         DispatchQueue.main.async {
             self.titleLabel.text = game.name
+            self.img.kf.indicatorType = .activity
             self.img.kf.setImage(with: URL(string: game.image), placeholder: UIImage(named: "game-placeholder"))
             self.setFavouriteButtonTitle()
         }
