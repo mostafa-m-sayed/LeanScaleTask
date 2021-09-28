@@ -18,9 +18,27 @@ class LeanScaleTaskTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAddFav() throws {
+        UserDefaults.standard.removeObject(forKey: "favourite-games")
+        let gameVM = GameVM(game: Game(id: 1, name: "Test Game", slug: "Test Game", backgroundImage: "", metacritic: 88, genres: [], description: "", redditUrl: "", website: ""))
+        gameVM.addToFavourite()
+        let listVM = GameListVM()
+        listVM.getFavouriteGames()
+        XCTAssert(listVM.games.contains(where: {$0.id == gameVM.id}))
+        UserDefaults.standard.removeObject(forKey: "favourite-games")
+    }
+    
+    func testRemoveFav() throws {
+        UserDefaults.standard.removeObject(forKey: "favourite-games")
+        let gameVM = GameVM(game: Game(id: 1, name: "Test Game", slug: "Test Game", backgroundImage: "", metacritic: 88, genres: [], description: "", redditUrl: "", website: ""))
+        gameVM.addToFavourite()
+        let listVM = GameListVM()
+        listVM.getFavouriteGames()
+        XCTAssert(listVM.games.contains(where: {$0.id == gameVM.id}))
+        gameVM.removeFromFavourite()
+        listVM.getFavouriteGames()
+        XCTAssert(!listVM.games.contains(where: {$0.id == gameVM.id}))
+        UserDefaults.standard.removeObject(forKey: "favourite-games")
     }
 
     func testPerformanceExample() throws {
