@@ -51,7 +51,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OZG-pN-daU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="547.82608695652175" y="276.5625"/>
+            <point key="canvasLocation" x="548" y="277"/>
         </scene>
         <!--Games-->
         <scene sceneID="Nwl-rN-IP6">
@@ -109,7 +109,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7f0-3c-BEp">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="ag0-h5-YHq" userLabel="Header View">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="291"/>
@@ -138,7 +138,7 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="1q8-H0-ccD" userLabel="FooterView">
-                                    <rect key="frame" x="0.0" y="383.50000034679067" width="414" height="112"/>
+                                    <rect key="frame" x="0.0" y="291" width="414" height="112"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwj-9i-7Pr">
@@ -155,7 +155,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="398" height="52.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visit reddit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srt-yV-MWg">
-                                                            <rect key="frame" x="0.0" y="16" width="85" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="16" width="382" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -171,6 +171,7 @@
                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="jXr-5k-4mT" secondAttribute="bottom" id="82E-eX-AK8"/>
+                                                        <constraint firstAttribute="trailing" secondItem="srt-yV-MWg" secondAttribute="trailing" constant="16" id="JM1-ah-wdb"/>
                                                         <constraint firstItem="srt-yV-MWg" firstAttribute="leading" secondItem="XbB-NC-4Ns" secondAttribute="leading" id="KuQ-Da-p0g"/>
                                                         <constraint firstItem="jXr-5k-4mT" firstAttribute="leading" secondItem="XbB-NC-4Ns" secondAttribute="leading" id="Sbt-J5-wbQ"/>
                                                         <constraint firstAttribute="trailing" secondItem="jXr-5k-4mT" secondAttribute="trailing" id="Xwg-zL-2fz"/>
@@ -182,7 +183,7 @@
                                                     <rect key="frame" x="0.0" y="53.5" width="398" height="52.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Visit website" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2N-6a-zlI">
-                                                            <rect key="frame" x="0.0" y="16" width="99.5" height="20.5"/>
+                                                            <rect key="frame" x="0.0" y="16" width="382" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -203,6 +204,7 @@
                                                         <constraint firstAttribute="bottom" secondItem="j2N-6a-zlI" secondAttribute="bottom" constant="16" id="UC0-IC-x3f"/>
                                                         <constraint firstItem="Kw0-fa-vaR" firstAttribute="leading" secondItem="bbP-0i-Hsx" secondAttribute="leading" id="ayX-N3-1Rk"/>
                                                         <constraint firstItem="j2N-6a-zlI" firstAttribute="leading" secondItem="bbP-0i-Hsx" secondAttribute="leading" id="nLd-fA-6Lm"/>
+                                                        <constraint firstAttribute="trailing" secondItem="j2N-6a-zlI" secondAttribute="trailing" constant="16" id="qpw-lU-nzs"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -225,16 +227,6 @@
                                         <constraint firstItem="kwj-9i-7Pr" firstAttribute="top" secondItem="hf6-K0-LEd" secondAttribute="bottom" id="yOt-cJ-klJ"/>
                                     </constraints>
                                 </view>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="avi-oV-hyW">
-                                        <rect key="frame" x="0.0" y="315.5" width="414" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="avi-oV-hyW" id="8Cn-bB-dge">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="Zju-uw-JHI" id="nRf-tY-2B3"/>
                                     <outlet property="delegate" destination="Zju-uw-JHI" id="RtB-qM-Tmj"/>
@@ -252,7 +244,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="g2y-T8-vHi">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="7Hl-qr-YST">
+                        <barButtonItem key="rightBarButtonItem" id="7Hl-qr-YST">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KHp-QR-ReB">
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -332,24 +324,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XAg-jv-gFt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-362" y="277"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="ywd-v4-rcf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kt1-wF-WH5" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fv8-fH-YRK">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Zju-uw-JHI" kind="relationship" relationship="rootViewController" id="mxk-X3-ptr"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ao2-BU-jWj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2586.9565217391305" y="-113.16964285714285"/>
         </scene>
     </scenes>
     <resources>
