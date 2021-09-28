@@ -35,7 +35,7 @@ class FavouritesVC: UIViewController {
     func getGames() {
         gamesVM.getFavouriteGames()
         if gamesVM.games.count > 0 {
-            navigationController?.navigationItem.title = "Favourites\(gamesVM.games.count)"
+            navigationItem.title = "Favourites (\(gamesVM.games.count))"
         } else {
             let label = UILabel()
             label.backgroundColor = .red
