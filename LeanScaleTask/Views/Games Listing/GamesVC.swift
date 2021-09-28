@@ -91,6 +91,7 @@ extension GamesVC: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.backgroundColor = UIColor(named: "selected-cell")
         if let nextVC = storyboard?.instantiateViewController(withIdentifier: "GameDetailsVC") as? GameDetailsVC {
+            nextVC.hidesBottomBarWhenPushed = true
             nextVC.gameId = gamesVM.games[indexPath.row].id
             navigationController?.pushViewController(nextVC, animated: true)
         }

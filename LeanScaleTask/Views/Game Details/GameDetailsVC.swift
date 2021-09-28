@@ -34,6 +34,9 @@ class GameDetailsVC: UIViewController {
         getGame()
         tableView.register(UINib(nibName: "GameDetailsTableCell", bundle: nil), forCellReuseIdentifier: "GameDetailsTableCell")
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
     
     @IBAction func favouriteButtonTapped(_ sender: UIButton) {
         game?.isFavourited() ?? false ? game?.removeFromFavourite() : game?.addToFavourite()

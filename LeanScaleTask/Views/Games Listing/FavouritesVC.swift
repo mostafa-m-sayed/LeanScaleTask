@@ -88,6 +88,7 @@ extension FavouritesVC: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let nextVC = storyboard?.instantiateViewController(withIdentifier: "GameDetailsVC") as? GameDetailsVC {
+            nextVC.hidesBottomBarWhenPushed = true
             nextVC.gameId = gamesVM.games[indexPath.row].id
             navigationController?.pushViewController(nextVC, animated: true)
         }
