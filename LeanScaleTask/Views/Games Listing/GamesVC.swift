@@ -38,17 +38,19 @@ class GamesVC: UIViewController {
     }
     
     @objc func refreshList(_ sender: AnyObject) {
-        getGames()
+        getGames(pullToRefresh: true)
     }
     
-    func getGames(isPagination: Bool = false) {
+    func getGames(isPagination: Bool = false, pullToRefresh: Bool = false) {
         if !isPagination {
             gamesVM.paginationURL = nil
         }
-        ActivityIndicatorController.shared.startLoading(vc: self)
+        if !pullToRefresh && !isPagination {
+            ActivityIndicatorController.shared.startLoading(vc: self)
+        }
         gamesVM.getGames {success in
-            ActivityIndicatorController.shared.stopLoading()
             DispatchQueue.main.async {
+                ActivityIndicatorController.shared.stopLoading()
                 self.refreshControl.endRefreshing()
                 self.tableView.reloadData()
             }
