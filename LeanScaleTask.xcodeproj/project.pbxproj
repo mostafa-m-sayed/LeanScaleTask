@@ -33,6 +33,7 @@
 		06A7A45027023B1E007F1163 /* GameDetailsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7A44E27023B1E007F1163 /* GameDetailsTableCell.swift */; };
 		06A7A45127023B1E007F1163 /* GameDetailsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06A7A44F27023B1E007F1163 /* GameDetailsTableCell.xib */; };
 		06A7A45427026DAB007F1163 /* ActivityIndicatorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7A45327026DAB007F1163 /* ActivityIndicatorController.swift */; };
+		06A7A45627030D97007F1163 /* GamesListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06A7A45527030D97007F1163 /* GamesListUITests.swift */; };
 		1BC66F61A92D9F5F266963CA /* Pods_LeanScaleTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6E72971F8CDB57E460740FC /* Pods_LeanScaleTask.framework */; };
 		739B1113E7762EDF61077C8D /* Pods_LeanScaleTaskTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 977C35008F547C4E9E5E05F8 /* Pods_LeanScaleTaskTests.framework */; };
 		BF65D76255858563EF6FDE58 /* Pods_LeanScaleTask_LeanScaleTaskUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5D671ED9308D75FFBDE34E5 /* Pods_LeanScaleTask_LeanScaleTaskUITests.framework */; };
@@ -88,6 +89,7 @@
 		06A7A44E27023B1E007F1163 /* GameDetailsTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailsTableCell.swift; sourceTree = "<group>"; };
 		06A7A44F27023B1E007F1163 /* GameDetailsTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameDetailsTableCell.xib; sourceTree = "<group>"; };
 		06A7A45327026DAB007F1163 /* ActivityIndicatorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorController.swift; sourceTree = "<group>"; };
+		06A7A45527030D97007F1163 /* GamesListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamesListUITests.swift; sourceTree = "<group>"; };
 		2BC969F515CCC91E4BBC7760 /* Pods-LeanScaleTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeanScaleTask.release.xcconfig"; path = "Target Support Files/Pods-LeanScaleTask/Pods-LeanScaleTask.release.xcconfig"; sourceTree = "<group>"; };
 		67FA58B1AEA3D835E33754BB /* Pods-LeanScaleTaskTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LeanScaleTaskTests.debug.xcconfig"; path = "Target Support Files/Pods-LeanScaleTaskTests/Pods-LeanScaleTaskTests.debug.xcconfig"; sourceTree = "<group>"; };
 		977C35008F547C4E9E5E05F8 /* Pods_LeanScaleTaskTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LeanScaleTaskTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -183,6 +185,7 @@
 			children = (
 				06A7A417270070F5007F1163 /* LeanScaleTaskUITests.swift */,
 				06A7A419270070F5007F1163 /* Info.plist */,
+				06A7A45527030D97007F1163 /* GamesListUITests.swift */,
 			);
 			path = LeanScaleTaskUITests;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06A7A418270070F5007F1163 /* LeanScaleTaskUITests.swift in Sources */,
+				06A7A45627030D97007F1163 /* GamesListUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

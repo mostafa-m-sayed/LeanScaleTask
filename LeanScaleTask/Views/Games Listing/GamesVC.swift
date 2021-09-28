@@ -13,6 +13,7 @@ class GamesVC: UIViewController {
 
     let searchController = UISearchController(searchResultsController: nil)
     var gamesVM = GameListVM()
+    var lastSearchTerm = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class GamesVC: UIViewController {
         initializePullToRefresh()
         tableView.register(UINib(nibName: "GameTableCell", bundle: nil), forCellReuseIdentifier: "GameTableCell")
         getGames()
+        tabBarItem.accessibilityIdentifier = "games-tab-button"
     }
 
     func initializeSearch() {
@@ -38,14 +40,14 @@ class GamesVC: UIViewController {
     }
     
     @objc func refreshList(_ sender: AnyObject) {
-        getGames(pullToRefresh: true)
+        getGames(ignoreLoader: true)
     }
     
-    func getGames(isPagination: Bool = false, pullToRefresh: Bool = false) {
+    func getGames(isPagination: Bool = false, ignoreLoader: Bool = false) {
         if !isPagination {
             gamesVM.paginationURL = nil
         }
-        if !pullToRefresh && !isPagination {
+        if !ignoreLoader && !isPagination {
             ActivityIndicatorController.shared.startLoading(vc: self)
         }
         gamesVM.getGames {success in
@@ -61,9 +63,10 @@ class GamesVC: UIViewController {
 extension GamesVC: UISearchResultsUpdating, UISearchBarDelegate {
     func updateSearchResults(for searchController: UISearchController) {
         guard let term = searchController.searchBar.text else { return }
-        if term.count > 3 || term == "" {
+        if term.count > 3 || term == "" && term != lastSearchTerm {
+            lastSearchTerm = term
             gamesVM.searchTerm = term
-            getGames()
+            getGames(ignoreLoader: true)
         }
     }
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {

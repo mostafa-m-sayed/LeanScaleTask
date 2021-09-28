@@ -243,6 +243,7 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Dr-jD-F2w"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <accessibility key="accessibilityConfiguration" identifier="GameDetailsVC"/>
                         <constraints>
                             <constraint firstItem="1Dr-jD-F2w" firstAttribute="trailing" secondItem="7f0-3c-BEp" secondAttribute="trailing" id="ARd-fp-FNW"/>
                             <constraint firstItem="1Dr-jD-F2w" firstAttribute="bottom" secondItem="7f0-3c-BEp" secondAttribute="bottom" id="EGg-I4-u3N"/>
@@ -255,6 +256,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="KHp-QR-ReB">
                                 <rect key="frame" x="302" y="7" width="92" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration" identifier="favourite"/>
                                 <state key="normal" title="Favourite"/>
                                 <connections>
                                     <action selector="favouriteButtonTapped:" destination="Zju-uw-JHI" eventType="touchUpInside" id="Hsn-E6-pA4"/>
@@ -354,7 +356,7 @@
         <image name="favourites-icon" width="27" height="26"/>
         <image name="games-icon" width="42" height="28"/>
         <namedColor name="table-bg">
-            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="0.92000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.97254901960784312" green="0.97254901960784312" blue="0.97254901960784312" alpha="0.92000001668930054" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

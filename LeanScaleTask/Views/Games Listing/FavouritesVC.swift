@@ -18,6 +18,7 @@ class FavouritesVC: UIViewController {
         super.viewDidLoad()
         initializeNoDataLabel()
         tableView.register(UINib(nibName: "GameTableCell", bundle: nil), forCellReuseIdentifier: "GameTableCell")
+        tabBarItem.accessibilityIdentifier = "favourites-tab-button"
     }
     
     func initializeNoDataLabel() {
